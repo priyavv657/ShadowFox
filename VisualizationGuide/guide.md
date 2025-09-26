@@ -30,3 +30,60 @@ plt.title("Line Plot Example")
 plt.xlabel("X-axis")
 plt.ylabel("Y-axis")
 plt.show()
+
+Scatter Plot
+
+Use Case: Show relationships or correlations between two variables.
+
+import matplotlib.pyplot as plt
+
+x = [5, 7, 8, 7, 6, 9, 5, 6, 7, 8]
+y = [99, 86, 87, 88, 100, 86, 103, 87, 94, 78]
+
+plt.scatter(x, y, color='red')
+plt.title("Scatter Plot Example")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.show()
+
+Bar Chart
+
+Use Case: Compare categories or groups.
+
+import matplotlib.pyplot as plt
+
+categories = ['A', 'B', 'C', 'D']
+values = [3, 7, 5, 6]
+
+plt.bar(categories, values, color='green')
+plt.title("Bar Chart Example")
+plt.xlabel("Categories")
+plt.ylabel("Values")
+plt.show()
+
+Histogram
+
+Use Case: Show the distribution of data values.
+
+import matplotlib.pyplot as plt
+
+data = [1,1,2,3,3,3,4,4,4,4,5,5,6,7,8,9,10]
+
+plt.hist(data, bins=5, color='purple', edgecolor='black')
+plt.title("Histogram Example")
+plt.xlabel("Bins")
+plt.ylabel("Frequency")
+plt.show()
+
+Pie Chart
+
+Use Case: Show proportions of a whole.
+
+import matplotlib.pyplot as plt
+
+sizes = [40, 25, 20, 15]
+labels = ['Apples', 'Bananas', 'Cherries', 'Dates']
+
+plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
+plt.title("Pie Chart Example")
+plt.show()
