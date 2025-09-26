@@ -187,3 +187,12 @@ plt.show()
 
 ---
 
+## 🔎 Comparison: Matplotlib vs Seaborn
+
+| Feature            | Matplotlib                                                                 | Seaborn                                                                 |
+|--------------------|-----------------------------------------------------------------------------|-------------------------------------------------------------------------|
+| **Ease of Use**    | Very flexible but requires more code for styling and setup.                 | Simpler, with built-in themes and functions for common plots.           |
+| **Customization**  | Highly customizable (low-level control over every element).                 | Less customizable (inherits from Matplotlib, but can tweak if needed). |
+| **Interactivity**  | Mostly static plots; interactivity possible with extra tools (e.g., mpld3). | Limited interactivity; mostly for static, publication-ready visuals.    |
+| **Performance**    | Handles large datasets efficiently.                                         | Works well with medium datasets; slower for very large data.            |
+| **Best For**       | Complex, highly customized plots.                                           | Quick, beautiful, statistical plots.                                    |
