@@ -196,3 +196,15 @@ plt.show()
 | **Interactivity**  | Mostly static plots; interactivity possible with extra tools (e.g., mpld3). | Limited interactivity; mostly for static, publication-ready visuals.    |
 | **Performance**    | Handles large datasets efficiently.                                         | Works well with medium datasets; slower for very large data.            |
 | **Best For**       | Complex, highly customized plots.                                           | Quick, beautiful, statistical plots.                                    |
+
+
+
+## 📚 Resources
+
+Here are the official documentation and tutorials for further learning:
+
+- [Matplotlib Quick Start Guide](https://matplotlib.org/stable/users/explain/quick_start.html#quick-start)  
+- [Seaborn Introduction](https://seaborn.pydata.org/tutorial/introduction.html)  
+- [Plotly Python Graphing Library](https://plotly.com/python/)  
+- [Bokeh User Guide](https://docs.bokeh.org/en/latest/docs/user_guide/basic.html)  
+- [Pandas Visualization Guide](https://pandas.pydata.org/docs/user_guide/visualization.html)  
