@@ -87,3 +87,87 @@ labels = ['Apples', 'Bananas', 'Cherries', 'Dates']
 plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
 plt.title("Pie Chart Example")
 plt.show()
+
+
+
+
+# Seaborn  
+
+## Overview  
+Seaborn is a high-level Python data visualization library built on top of Matplotlib. It provides a cleaner, simpler syntax and comes with attractive default styles and color themes.  
+
+- **Key Features:**  
+  - Built-in themes for beautiful plots.  
+  - Works seamlessly with Pandas DataFrames.  
+  - Easy functions for statistical plots.  
+  - Great for data exploration and quick insights.  
+
+- **Typical Use Cases:**  
+  - Statistical data visualization.  
+  - Exploratory data analysis (EDA).  
+  - Creating heatmaps, categorical plots, and regression plots.  
+
+---
+
+## Graph Types in Seaborn  
+
+### 1. Scatter Plot  
+**Use Case:** Visualize relationships between two numerical variables.  
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+sns.scatterplot(x="total_bill", y="tip", data=tips, hue="sex")
+plt.title("Scatter Plot Example")
+plt.show()
+
+Bar Plot
+
+Use Case: Compare mean/aggregate values across categories.
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+sns.barplot(x="day", y="total_bill", data=tips)
+plt.title("Bar Plot Example")
+plt.show()
+
+Histogram (Displot)
+
+Use Case: Show distribution of numerical data.
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+sns.displot(tips["total_bill"], bins=10, kde=True)
+plt.title("Histogram Example")
+plt.show()
+
+Box Plot
+
+Use Case: Show data spread and detect outliers.
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+sns.boxplot(x="day", y="total_bill", data=tips)
+plt.title("Box Plot Example")
+plt.show()
+
+Heatmap
+
+Use Case: Visualize correlations or matrix data.
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+flights = sns.load_dataset("flights").pivot("month", "year", "passengers")
+sns.heatmap(flights, annot=True, fmt="d", cmap="YlGnBu")
+plt.title("Heatmap Example")
+plt.show()
+
