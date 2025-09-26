@@ -31,10 +31,11 @@ plt.xlabel("X-axis")
 plt.ylabel("Y-axis")
 plt.show()
 
-Scatter Plot
+2. Scatter Plot
 
 Use Case: Show relationships or correlations between two variables.
 
+```python
 import matplotlib.pyplot as plt
 
 x = [5, 7, 8, 7, 6, 9, 5, 6, 7, 8]
