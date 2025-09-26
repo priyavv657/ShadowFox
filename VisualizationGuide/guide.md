@@ -1,22 +1,12 @@
-# Matplotlib
+# Visualization Guide
 
-## Overview
-Matplotlib is one of the most widely used Python libraries for creating static, animated, and interactive visualizations.  
-- **Key Features:**
-  - Low-level library that gives full control over plots.
-  - Supports 2D and limited 3D plots.
-  - Highly customizable (titles, labels, colors, styles).
-  - Useful for creating publication-quality figures.
-- **Typical Use Cases:**  
-  - Quick exploratory data visualization.  
-  - Scientific research and academic publications.  
-  - Building plots from scratch with fine-grained control.  
+This guide explains how to create different types of plots using **Matplotlib** and **Seaborn**.
 
 ---
 
-## Graph Types in Matplotlib
+# Graph Types in Matplotlib
 
-### 1. Line Plot
+## 1. Line Plot  
 **Use Case:** Show trends over time or continuous variables.  
 
 ```python
@@ -30,10 +20,12 @@ plt.title("Line Plot Example")
 plt.xlabel("X-axis")
 plt.ylabel("Y-axis")
 plt.show()
+```
 
-2. Scatter Plot
+---
 
-Use Case: Show relationships or correlations between two variables.
+## 2. Scatter Plot  
+**Use Case:** Show relationships or correlations between two variables.  
 
 ```python
 import matplotlib.pyplot as plt
@@ -46,40 +38,49 @@ plt.title("Scatter Plot Example")
 plt.xlabel("X-axis")
 plt.ylabel("Y-axis")
 plt.show()
+```
 
-Bar Chart
+---
 
-Use Case: Compare categories or groups.
+## 3. Bar Chart  
+**Use Case:** Compare different categories.  
 
+```python
 import matplotlib.pyplot as plt
 
 categories = ['A', 'B', 'C', 'D']
-values = [3, 7, 5, 6]
+values = [4, 7, 2, 9]
 
-plt.bar(categories, values, color='green')
+plt.bar(categories, values, color='blue')
 plt.title("Bar Chart Example")
 plt.xlabel("Categories")
 plt.ylabel("Values")
 plt.show()
+```
 
-Histogram
+---
 
-Use Case: Show the distribution of data values.
+## 4. Histogram  
+**Use Case:** Show the distribution of a dataset.  
 
+```python
 import matplotlib.pyplot as plt
 
-data = [1,1,2,3,3,3,4,4,4,4,5,5,6,7,8,9,10]
+data = [22, 87, 5, 43, 56, 73, 55, 54, 11, 20, 51, 5]
 
-plt.hist(data, bins=5, color='purple', edgecolor='black')
+plt.hist(data, bins=5, color='green', edgecolor='black')
 plt.title("Histogram Example")
 plt.xlabel("Bins")
 plt.ylabel("Frequency")
 plt.show()
+```
 
-Pie Chart
+---
 
-Use Case: Show proportions of a whole.
+## 5. Pie Chart  
+**Use Case:** Show proportions of a whole.  
 
+```python
 import matplotlib.pyplot as plt
 
 sizes = [40, 25, 20, 15]
@@ -88,14 +89,14 @@ labels = ['Apples', 'Bananas', 'Cherries', 'Dates']
 plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
 plt.title("Pie Chart Example")
 plt.show()
+```
 
-
-
+---
 
 # Seaborn  
 
 ## Overview  
-Seaborn is a high-level Python data visualization library built on top of Matplotlib. It provides a cleaner, simpler syntax and comes with attractive default styles and color themes.  
+Seaborn is a high-level Python data visualization library built on top of Matplotlib. It provides a cleaner, simpler syntax and beautiful default themes.  
 
 - **Key Features:**  
   - Built-in themes for beautiful plots.  
@@ -106,69 +107,83 @@ Seaborn is a high-level Python data visualization library built on top of Matplo
 - **Typical Use Cases:**  
   - Statistical data visualization.  
   - Exploratory data analysis (EDA).  
-  - Creating heatmaps, categorical plots, and regression plots.  
 
 ---
 
-## Graph Types in Seaborn  
+## 1. Line Plot  
 
-### 1. Scatter Plot  
-**Use Case:** Visualize relationships between two numerical variables.  
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Example data
+tips = sns.load_dataset("tips")
+
+sns.lineplot(x="size", y="total_bill", data=tips)
+plt.title("Seaborn Line Plot Example")
+plt.show()
+```
+
+---
+
+## 2. Scatter Plot  
 
 ```python
 import seaborn as sns
 import matplotlib.pyplot as plt
 
 tips = sns.load_dataset("tips")
-sns.scatterplot(x="total_bill", y="tip", data=tips, hue="sex")
-plt.title("Scatter Plot Example")
+
+sns.scatterplot(x="total_bill", y="tip", hue="time", data=tips)
+plt.title("Seaborn Scatter Plot Example")
 plt.show()
+```
 
-Bar Plot
+---
 
-Use Case: Compare mean/aggregate values across categories.
+## 3. Bar Plot  
 
+```python
 import seaborn as sns
 import matplotlib.pyplot as plt
 
 tips = sns.load_dataset("tips")
+
 sns.barplot(x="day", y="total_bill", data=tips)
-plt.title("Bar Plot Example")
+plt.title("Seaborn Bar Plot Example")
 plt.show()
+```
 
-Histogram (Displot)
+---
 
-Use Case: Show distribution of numerical data.
+## 4. Histogram  
 
+```python
 import seaborn as sns
 import matplotlib.pyplot as plt
 
 tips = sns.load_dataset("tips")
-sns.displot(tips["total_bill"], bins=10, kde=True)
-plt.title("Histogram Example")
+
+sns.histplot(tips["total_bill"], bins=10, kde=True)
+plt.title("Seaborn Histogram Example")
 plt.show()
+```
 
-Box Plot
+---
 
-Use Case: Show data spread and detect outliers.
+## 5. Heatmap  
 
+```python
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-tips = sns.load_dataset("tips")
-sns.boxplot(x="day", y="total_bill", data=tips)
-plt.title("Box Plot Example")
+flights = sns.load_dataset("flights")
+pivot_table = flights.pivot("month", "year", "passengers")
+
+sns.heatmap(pivot_table, annot=True, fmt="d", cmap="YlGnBu")
+plt.title("Seaborn Heatmap Example")
 plt.show()
+```
 
-Heatmap
-
-Use Case: Visualize correlations or matrix data.
-
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-flights = sns.load_dataset("flights").pivot("month", "year", "passengers")
-sns.heatmap(flights, annot=True, fmt="d", cmap="YlGnBu")
-plt.title("Heatmap Example")
-plt.show()
+---
 
