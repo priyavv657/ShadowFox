@@ -1,6 +1,6 @@
-# Visualization Guide
+# 📊 Visualization Guide: Matplotlib & Seaborn  
 
-This guide explains how to create different types of plots using **Matplotlib** and **Seaborn**.
+This guide explains how to create different types of plots using **Matplotlib** and **Seaborn**. It is designed for beginners who want to quickly learn the basics of Python visualization.  
 
 ---
 
