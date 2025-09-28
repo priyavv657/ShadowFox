@@ -1,9 +1,8 @@
 # Task 3 — Fielding Performance Analysis (T20)
 
-**Author:** `<Your Full Name>`  
+**Author:** Priyadharshini Vijayakumar 
 **GitHub:** https://github.com/priyavv657/ShadowFox  
 **Folder:** `task3_fielding`  
-**Date:** `<YYYY-MM-DD>`
 
 ---
 
